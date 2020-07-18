@@ -1,0 +1,88 @@
+.item {
+  position: relative;
+}
+
+.close {
+  position: absolute;
+  right: 10rpx;
+  top: 10rpx;
+  height: 40rpx;
+  width: 40rpx;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, .4);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  z-index: 99
+}
+
+.add {
+  height: 220rpx;
+  width: 220rpx;
+  border: 1rpx solid #eee;
+  border-radius: 4rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center
+}
+
+.add-icon {
+  height: 100rpx;
+  width: 100rpx
+}
+
+.img {
+  height: 220rpx;
+  width: 220rpx;
+  margin-bottom: 10rpx;
+  border: 1rpx solid #eee;
+  border-radius: 4rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center
+}
+
+.min-img {
+  height: 160rpx;
+  width: 160rpx;
+  margin-bottom: 10rpx;
+  border: 1rpx solid #eee;
+  border-radius: 4rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center
+}
+
+.progress{
+  height: 220rpx;
+  width: 200rpx;
+  position: absolute;
+  top: 0;
+  left: 10rpx;
+  z-index: 999;
+}
+
+.mask{
+  height: 220rpx;
+  width: 220rpx;
+  top: 0;
+  left: 0;
+  position: absolute;
+  pointer-events: painted;
+  z-index: 998;
+}
+
+.flex {
+  border: 1rpx solid #eee;
+  border-radius: 4rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center
+}
+

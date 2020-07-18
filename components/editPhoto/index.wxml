@@ -1,0 +1,14 @@
+<!--components/editPhoto/index.wxml-->
+<view class="container">
+  <view class="top" style="height: {{topHeight}}px;top: {{marginTop}}px;">
+    <l-icon class="top_icon" name="left" size="30" bindtap="navigateBack"/>
+    <text class="top_text">编辑图片墙</text>
+  </view>
+  <view class="content" style="margin-top: {{menuBottom}}px">
+    <text class="tip" wx:if="{{!photoArray}}">快来上传你的图片吧</text>
+    <l-image-picker urls="{{photoList}}" mode="aspectFill" bind:linchange="photoChange" bind:linremove="photoRemove" bind:linoversize="photoOverSize" maxImageSize="2200000"/>
+    <l-button class="button" size="large" bind:lintap="clickButton">完成</l-button>
+  </view>
+  
+</view>
+

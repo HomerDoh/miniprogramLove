@@ -1,0 +1,40 @@
+<!--components/user/index.wxml-->
+<view style="height: {{pageHeight}}px;" class="container" bind:touchstart="touchstart" bind:touchmove="touchmove" bind:touchcancel="touchcancel" bind:touchend="touchend">
+  <view style="position: absolute;left: 20rpx;height: {{topHeight}}px;top: {{marginTop}}px;" class="top">
+    <l-icon  name="left" size="30" color="#ffffff" bindtap="back"/>
+  </view>
+  
+	<image style="height: {{posterHeight}}px;" class="poster" src="{{poster}}" mode="aspectFill" animation="{{animation}}"></image>
+	<view class="content">
+    <view class="head">
+      <image class="head_image" src="{{userInfo.avatarUrl}}"></image>
+      <image class="head_gender" src="{{userInfo.gender?male:female}}"></image>
+    </view>
+    <view class="contact">
+      <l-button class="contact_button" height="60" width="150" shape="semicircle">+ 关注</l-button>
+      <image class="contact_message" src="/images/icons/sendMessage.png"></image>
+    </view>
+
+    <view class="info">
+      <view class="info_nickName">{{userInfo.nickName}}</view>
+      <view wx:if="{{userInfo.intro?true:false}}" class="info_intro">{{userInfo.intro}}</view>
+      <view class="fo">
+        <view class="fo1">
+          <view class="fo1_1">0</view>
+          <view class="fo1_2">关注Ta的人</view>
+        </view>
+        <view class="fo2">
+          <view class="fo2_1">0</view>
+          <view class="fo2_2">关注Ta的人</view>
+        </view>
+      </view>
+    </view>
+
+    <view class="photosWall">
+      <view class="photosWall_text">图片墙</view>
+      <l-album class="photosWall_photos" urls="{{photosWall}}" key="*this"></l-album>
+    </view>
+
+
+	</view>
+</view>

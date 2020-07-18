@@ -1,0 +1,46 @@
+<scroll-view style="height: {{capsuleBottom}}px;" class="scroll_navigate" scroll-x enable-flex scroll-with-animation="true" scroll-into-view="item{{currentTab}}">
+	<view class="navigate_container">
+		<view class="navigate_item" id="item{{index}}" wx:for="{{tabs}}" wx:key="index" data-index="{{index}}" bindtap="handleClick">
+			<view class="names {{currentTab === index ? 'active' : ''}}">{{item}}</view>
+			<view class="currtline {{currentTab === index ? 'active' : ''}}"></view>
+		</view>
+	</view>
+
+</scroll-view>
+
+<swiper style="height: {{swiperHeight}}px;top: {{capsuleBottom}}px;" class="swiper" bindchange="handleSwiper" current="{{currentTab}}">
+		<swiper-item item-id="0">
+			<scroll-view class="swiper_item"  data-index="0" scroll-y refresher-enabled refresher-triggered="{{isRefresh}}" bindrefresherrefresh="refresherpulling" bindscrolltolower="handleTolower">
+				<view class="swiper_item_text" wx:if="{{newsNews.length==0}}">还没有动态~~</view>
+				<view wx:else class="swiper_item_news">
+					<l-news  wx:for="{{newrNews}}" new="{{item}}" wx:key="id"/>
+				</view>
+				
+			</scroll-view>
+		</swiper-item>
+		<swiper-item item-id="1">
+			<scroll-view class="swiper_item"  data-index="1" scroll-y refresher-enabled refresher-triggered="{{isRefresh}}" bindrefresherrefresh="refresherpulling" bindscrolltolower="handleTolower">
+				<view class="swiper_item_text" wx:if="{{newsNews.length==0}}">还没有动态~~</view>
+				<view wx:else class="swiper_item_news">
+					<l-news  wx:for="{{news}}" new="{{item}}" wx:key="id" bindoptions="openOptions"/>
+				</view>
+			</scroll-view>
+		</swiper-item>
+		<swiper-item item-id="2">
+			<scroll-view class="swiper_item"  data-index="2" scroll-y refresher-enabled refresher-triggered="{{isRefresh}}" bindrefresherrefresh="refresherpulling" bindscrolltolower="handleTolower">
+			<view class="swiper_item_text" wx:if="{{true}}">还没有动态~~</view>
+				<view wx:else class="swiper_item_news">
+					<l-news  wx:for="{{focusNews}}" new="{{item}}" wx:key="id"/>
+				</view>
+			</scroll-view>
+		</swiper-item>
+</swiper>
+
+<image class="post" src="/images/icons/post.png" bindtap="postNews"></image>
+
+<l-popup show="{{showPop}}" content-align="center">
+	<view class="options">
+		<view class="options1">关注</view>
+		<view class="options2">投诉</view>
+	</view>
+</l-popup>

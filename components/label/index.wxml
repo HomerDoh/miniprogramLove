@@ -1,0 +1,2 @@
+<!--components/label/index.wxml-->
+<text class="label">{{label}}</text>

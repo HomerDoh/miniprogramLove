@@ -1,0 +1,11 @@
+{
+  "usingComponents": {
+    "l-icon": "/miniprogram_npm/lin-ui/icon/index",
+    "l-sticky": "/miniprogram_npm/lin-ui/sticky/index",
+    "l-sticky-item": "/miniprogram_npm/lin-ui/sticky-item/index",
+    "l-segment": "/miniprogram_npm/lin-ui/segment/index",
+    "l-segment-item": "/miniprogram_npm/lin-ui/segment-item/index",
+    "comment": "/components/comment/index",
+    "l-arc-popup": "/miniprogram_npm/lin-ui/arc-popup/index"
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "l-news": "/components/news/index",
+    "l-nears": "/components/nears/index",
+    "l-popup": "/miniprogram_npm/lin-ui/popup/index"
+  }
+}

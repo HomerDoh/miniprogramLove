@@ -1,0 +1,66 @@
+<!--components/newsDetail/index.wxml-->
+<view class="container">
+	<!-- 顶部横栏 -->
+	<view class="top" style="height: {{capsuleBottom}}px;">
+		<view class="top_icon">
+			<l-icon name="left" size="30" bindtap="back" />
+		</view>
+	</view>
+
+	<view class="header" style="margin-top: {{capsuleBottom}}px;">
+		<image class="header_avatarUrl" src="{{new.avatarUrl}}"></image>
+		<view class="header_nickName">{{new.nickName}}<view class="header_time">{{time}}</view></view>
+		
+	</view>
+	<view class="content">{{new.content}}</view>
+
+	<l-sticky l-class="sticky" scrollTop="{{scrollTop}}" style="min-height: {{contentHeight}}px;">
+		<l-sticky-item l-class="sticky-item" top="{{capsuleBottomRPX}}">
+			<l-segment slot="header" l-class="segment" bind:linchange="changeTabs" has-line="{{false}}" activeKey="{{currentItemId}}">
+				<l-segment-item key="one" slot="one">
+					<view class="segment-item">
+						<view>评论</view>
+					</view>
+				</l-segment-item>
+				<l-segment-item key="two" slot="two">
+					<view class="segment-item">
+						<view>点赞</view>
+					</view>
+				</l-segment-item>
+
+				<l-segment-item key="three" slot="three">
+					<view class="segment-item">
+						<view>关注</view>
+					</view>
+				</l-segment-item>
+			</l-segment>
+			<swiper slot="body" class="swiper" style="min-height: {{contentHeight - 50}}px;" bindchange="handleSwiper" current="{{currentTab}}">
+				<swiper-item class="swiper-item" item-id="one">
+					<block wx:for="{{comment}}" wx:key="id">
+						<comment comment="{{item}}" bindshowpop="showPop"/>
+					</block>
+				</swiper-item>
+				<swiper-item class="swiper-item" item-id="two">
+					<view>点赞</view>
+				</swiper-item>
+				<swiper-item class="swiper-item" item-id="three">
+					<view>关注</view>
+				</swiper-item>
+			</swiper>
+		</l-sticky-item>
+	</l-sticky>
+
+	<view class="comment" style="bottom: {{bottom}}px;">
+		<textarea class="comment_textarea" placeholder="写回复..." maxlength="512" auto-height="{{true}}" show-confirm-bar="{{false}}" adjust-position="{{false}}" bindinput="input" bindconfirm="post"></textarea>
+		<view class="comment_post" bindtap="post">发布</view>
+	</view>
+
+	<l-arc-popup show="{{showPop}}">
+		<view class="options">
+			<view class="options1">关注</view>
+			<view class="options2">投诉</view>
+		</view>
+	</l-arc-popup>
+
+
+</view>

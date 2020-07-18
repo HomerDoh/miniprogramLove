@@ -1,0 +1,77 @@
+<!--components/info/index.wxml-->
+<view style="height: {{pageHeight}}px;" class="container" bind:touchstart="touchstart" bind:touchmove="touchmove" bind:touchcancel="touchcancel" bind:touchend="touchend">
+	<view class="top" style="height: {{capsuleHeight}}px;top: {{capsuleMarginTop}}px" bindtap="back">
+		<l-icon name="left" size="30" color="#ffffff"/>
+	</view>
+
+	<image style="height: {{posterHeight}}px;" class="poster" src="{{poster}}" mode="aspectFill" animation="{{animation}}"></image>
+
+	<view class="content">
+    <view class="head">
+     <image class="head_image" src="{{userInfo.avatarUrl}}"></image>
+      <image class="head_gender" src="{{userInfo.gender?male:female}}"></image>
+    </view>
+    <view class="editInfo" bindtap="editInfo">
+      <l-button class="contact_button" height="60" width="150" shape="semicircle">编辑资料</l-button>
+    </view>
+
+    <view class="info">
+      <view class="info_nickName">{{userInfo.nickName}}</view>
+      <view class="info_intro">{{userInfo.intro?userInfo.intro:'还没有个人签名哦'}}</view>
+      <view class="fo">
+        <view class="fo1">
+          <view class="fo1_1">0</view>
+          <view class="fo1_2">关注Ta的人</view>
+        </view>
+        <view class="fo2">
+          <view class="fo2_1">0</view>
+          <view class="fo2_2">关注Ta的人</view>
+        </view>
+      </view>
+    </view>
+
+    <view class="photosWall">
+      <view class="photosWall_text" bindtap="openPhotosWall">
+			照片墙
+			<l-icon class="photosWall_icon" name="right" size="30"/>
+			</view>
+      <l-album class="photosWall_photos" urls="{{photoArray}}" key="*this"></l-album>
+    </view>
+
+	</view>
+
+	<l-arc-popup show="{{showPop}}" min-height="{{screenHeight}}" max-height="{{screenHeight}}" arc-radius="0">
+		<view slot="header" class="pop_header"> 
+    	<text bindtap="popCancel">取消</text>
+			<text>编辑个人资料</text>
+			<text bindtap="popConfirm">保存</text>
+  	</view>
+		<view class="pop_content">
+			<image class="pop_portrait" src="{{userInfo.avatarUrl}}"><text class="pop_modPortrait">修改图片</text></image>
+			<l-input class="pop_content_nickName" label="昵称" value="{{userInfo.nickName}}" clear="true" bind:lininput="input"/>
+			<l-radio-group class="pop_content_sex" none-check="false" current="1" placement="row" bind:linchange="changeRadio">
+				<text class="pop_content_sex_text">性别</text>
+				<l-radio class="pop_content_sex_men" key="0">男</l-radio>
+				<l-radio class="pop_content_sex_women" key="1">女</l-radio>
+			</l-radio-group>
+			<view class="pop_content_intro">
+				<text class="pop_content_intro_text">简介</text>
+				<textarea class="pop_content_intro_textarea" placeholder="介绍一下自己吧" value="{{userInfo.intro}}" maxlength="140" bindinput="textarea"></textarea>
+			</view>
+			<view class="pop_content_city">
+				<text class="pop_content_city_text">城市</text>
+				<text class="pop_content_city_loc" bindtap="city">{{userInfo.city}}{{userInfo.county}}</text>
+			</view>
+			<view class="pop_content_birth">
+				<text class="pop_content_birth_text">生日</text>
+				<text class="pop_content_birth_day">1998-9-5</text>
+			</view>
+		</view>
+		
+
+	</l-arc-popup>
+	
+
+
+
+</view>

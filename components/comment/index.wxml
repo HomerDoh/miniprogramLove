@@ -1,0 +1,14 @@
+<!--components/comment/index.wxml-->
+<view class="container">
+	<view class="header">
+		<image class="header_avatarUrl" src="{{comment.avatarUrl}}"></image>
+		<view class="header_nickName">{{comment.nickName}}</view>
+		<view class="header_time">{{time}}</view>
+		<l-icon class="header_icon" name="ellipsis" size="30" color="#d0d0d0" data-id="{{comment.id}}" bindtap="onEllipsis" />
+	</view>
+	<view class="content">{{comment.content}}</view>
+	<view class="footer">
+		<l-icon class="footer_icon" name="like" size="30" />
+		<view class="footer_value">{{comment.like}}</view>
+	</view>
+</view>

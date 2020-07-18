@@ -1,0 +1,46 @@
+<view class="news">
+
+  <view class="header" bindtap="openUser">
+    <image class="header_avatarUrl" src="{{new.avatarUrl}}"></image>
+    <text class="header_nickName">{{new.nickName}}</text>
+    <l-icon class="header_icon" name="ellipsis" size="30" color="#d0d0d0" data-id="{{new.id}}" catchtap="onEllipsis"></l-icon>
+  </view>
+
+  <view class="label" wx:if="{{new.label}}">
+    <text class="label_text">{{new.label}}</text>
+  </view>
+
+  <view class="content">
+    <view class="content_text1">{{content}}<view wx:if="{{showFullContent}}" class="content_text2" catchtap="fullContent">...全文</view></view>
+  </view>
+
+  
+  
+
+  <view class="album">
+    <l-album urls="{{photos}}"/>
+  </view>
+
+  <slot name="position"/>
+
+  <view class="news-foot">
+    <view class="foot-content" data-id="{{new.id}}" bindtap="onLike">
+      <image class="foot-content-image" src="{{liked?likeIcon:dislikeIcon}}"></image>
+      <text class="foot-content-text">{{likeCount}}</text>
+    </view>
+    <view class="foot-content" bindtap="detail">
+      <image class="foot-content-image" src="{{commentIcon}}"></image>
+      <text class="foot-content-text">{{commentCount}}</text>
+    </view>
+    <view class="foot-content" bindtap="onShare">
+      <image class="foot-content-image" src="{{shareIcon}}"></image>
+      <text class="foot-content-text">{{shareCount}}</text>
+    </view>
+  </view>
+
+  
+  
+
+  
+</view>
+

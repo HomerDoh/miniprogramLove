@@ -1,0 +1,55 @@
+{
+  "pages": [
+    "pages/main/main",
+    "pages/messages/messages",
+    "pages/my/my",
+    "pages/subscribe/subscribe",
+    "components/user/index",
+    "components/editPhoto/index",
+    "components/newsDetail/index"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "恋爱Bar",
+    "navigationBarTextStyle": "black",
+    "navigationStyle": "custom"
+  },
+  "tabBar": {
+    "color": "#747476",
+    "selectedColor": "#f77098",
+    "list": [
+      {
+        "text": "首页",
+        "pagePath": "pages/main/main",
+        "iconPath": "images/icons/main.png",
+        "selectedIconPath": "images/icons/mained.png"
+      },
+      {
+        "text": "消息",
+        "pagePath": "pages/messages/messages",
+        "iconPath": "images/icons/message.png",
+        "selectedIconPath": "images/icons/messaged.png"
+      },
+      {
+        "text": "关注",
+        "pagePath": "pages/subscribe/subscribe",
+        "iconPath": "images/icons/subscribe.png",
+        "selectedIconPath": "images/icons/subscribed.png"
+      },
+      {
+        "text": "我的",
+        "pagePath": "pages/my/my",
+        "iconPath": "images/icons/my.png",
+        "selectedIconPath": "images/icons/mySelected.png"
+      }
+    ]
+  },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于查看附近人"
+    }
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

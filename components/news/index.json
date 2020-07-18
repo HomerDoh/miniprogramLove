@@ -1,0 +1,8 @@
+{
+  "component": true,
+  "usingComponents": {
+    "l-album": "/miniprogram_npm/lin-ui/album/index",
+    "l-button": "/miniprogram_npm/lin-ui/button/index",
+    "l-icon": "/miniprogram_npm/lin-ui/icon/index"
+  }
+}

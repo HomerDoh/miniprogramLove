@@ -1,0 +1,32 @@
+<view class="container" style="height:{{pageHeight}}px"> 
+
+	<view class="userData" >
+  	<image class="userDataBackground" src="/images/background.png"></image>
+
+		<!-- 登录显示 -->
+		<view class="userData_signed" wx:if="{{hasSign}}" bindtap="directToDetail">
+			<image class="userData_signed_avatarUrl" src="{{userInfo.avatarUrl}}"></image>
+			<view class="userData_signed_detail">
+				<text class="nickname">{{userInfo.nickName}}</text>
+				<view class="focus">
+					<text class="focus_focus">关注{{0}}</text>
+					<text class="focus_focused">被关注{{0}}</text>
+				</view>
+			</view>
+
+			<view class="userData_signed_right">
+				<text class="userData_signed_rightText">个人空间</text>
+				<l-icon class="userData_signed_rightIcon" name="right" size="25"></l-icon>
+			</view>
+			
+		</view>
+
+<!-- 未登录显示 -->
+    <view class="notSigned" wx:if="{{!hasSign}}">
+      <text class="notSignInText">欢迎登录恋爱bar，体验更佳: )</text>
+			<l-button class="signInButton" open-type="getUserInfo" type="default" bind:lintap="signIn" disabled="{{button_forbid}}" loading="{{buttonForbid}}">微信登录</l-button>
+    </view>
+
+	</view>
+
+</view>

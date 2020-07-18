@@ -1,0 +1,144 @@
+/* components/newsDetail/index.wxss */
+.container{
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.top{
+  position: fixed;
+  width: 100%;
+  top: 0;
+  background-color: white;
+  z-index: 777;
+}
+
+.top_icon{
+  margin-left: 30rpx;
+  margin-top: 70rpx;
+}
+
+
+
+.header{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 95vw;
+  position: relative;
+}
+
+.header_avatarUrl{
+  width: 50rpx;
+  height: 50rpx;
+  border-radius: 50%;
+}
+
+.header_nickName{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin-left: 20rpx;
+}
+
+.header_time{
+  font-size: 24rpx;
+  color: #d0d0d0;
+}
+
+.content{
+  width: 95vw;
+  margin-top: 30rpx;
+}
+
+
+.sticky{
+  width: 750rpx;
+}
+
+.sticky-item{
+  width: 750rpx;
+}
+
+
+.segment{
+  height: 40px !important;
+  width: 750rpx;
+  background-color: white;
+  z-index: 998;
+}
+
+.swiper{
+  width: 750rpx;
+}
+
+.swiper-item{
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
+
+
+.comment{
+  position: fixed;
+  display: flex;
+  flex-direction: row;
+  bottom: 0;
+  padding: 10rpx;
+  width: 100vw;
+  align-items: center;
+  border-top: 1px solid #f5f5f5;
+  min-height: 40px;
+  max-height: 150px;
+  background-color: white;
+}
+
+.comment_textarea{
+  width: 540rpx;
+  max-height: 250rpx;
+  overflow-y: scroll;
+  margin-left: 30rpx;
+  padding: 10rpx 20rpx 10rpx 20rpx;
+  background-color: #f7f7f7;
+  border-radius: 10px;
+  z-index: 777;
+}
+
+.comment_post{
+  width: 140rpx;
+  display: flex;
+  flex-direction: row;
+  position: absolute;
+  right: 0;
+  align-items: center;
+  justify-content: center;
+}
+
+.options{
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  background-color: white;
+}
+
+.options1{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 60rpx;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px solid #f5f5f5;
+}
+
+.options2{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 60rpx;
+  align-items: center;
+  justify-content: center;
+}

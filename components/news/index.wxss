@@ -1,0 +1,116 @@
+/* components/news/index.wxss */
+.news{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: auto;
+  background-color: #ffffff;
+  padding: 10px;
+}
+
+.header{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 60rpx;
+  align-items: center;
+  
+}
+
+.header_avatarUrl{
+  height: 50rpx;
+  width: 50rpx;
+  border-radius:50%;
+}
+
+.header_nickName{
+  font-size: 28rpx;
+  margin-left: 30rpx;
+}
+
+.header_icon{
+  position: absolute;
+  right: 0;
+  border: 20rpx solid white;
+}
+
+.label{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  padding: 10rpx;
+  align-items: center;
+  
+}
+
+.label_text{
+  color: #d4442c;
+  font-size: 32rpx;
+  
+}
+
+
+
+.content{
+  width: 90%;
+  margin-top: 20rpx;
+}
+
+
+.content_text2{
+  display:inline-block;
+  color: #d4442c;
+}
+
+.album{
+  margin-top: 20rpx;
+}
+
+
+
+.news-foot{
+  margin-top: 50rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.foot-content{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.foot-content-image{
+  width: 50rpx;
+  height: 50rpx;
+}
+
+.foot-content-text{
+  margin-bottom: 20px;
+}
+
+.weixin{
+  animation: myfirst 2s linear 0s infinite alternate;
+  width: 50rpx;
+  height: 50rpx;
+}
+
+@keyframes myfirst{
+  from {transform: scale(1);}
+  to {transform: scale(1.5);}
+}
+
+.photoContainer{
+  display: flex;
+  flex-direction: row;
+  width: 500rpx;
+  flex-wrap: wrap;
+}
+
+.photoItem{
+  margin-right: 10rpx;
+  margin-bottom: 2rpx;
+}

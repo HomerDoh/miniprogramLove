@@ -1,0 +1,83 @@
+<!--components/post/index.wxml-->
+
+
+<view class="container">
+
+	<view class="header" style="height: {{menuBottom}}PX">
+		<l-icon class="header_close" name="close" size="30" bindtap="close" />
+		<text class="header_text">发布</text>
+	</view>
+
+
+	<view class="content" style="height: {{contentHeight}}px;margin-top: {{menuBottom}}px;">
+		<scroll-view class="scrollView" scroll-y="true">
+			<view class="Input">
+				<image class="Input_head" src="{{userInfo.avatarUrl}}" wx:if="{{!inputing}}"></image>
+				<textarea class="Input_input" auto-height maxlength="6000" show-confirm-bar="{{false}}" auto-focus bindinput="onInput" placeholder="发布点滴心情..."></textarea>
+			</view>
+
+			<l-image-picker mode="aspectFill" openImagePicker="{{openImagePicker}}" max-image-size="3000000" bind:linchange="imageChange" bind:linremove="imageRemove">
+			</l-image-picker>
+
+			<view class="options">
+				<view class="options_location" bindtap="chooseLocation">
+					<image class="options_location_image" src="{{optionsLocationImage}}"></image>
+					<text>{{selectedPosTitle}}</text>
+					<l-icon class="options_right" name="{{locationIcon}}" size="30" color="#d0d0d0" catchtap="chancelLocation" />
+				</view>
+				<view class="options_label" bindtap="chooseLabel">
+					<image class="options_label_image" src="{{optionsLabelImage}}"></image>
+					<text>{{selectedLabel}}</text>
+					<l-icon class="options_right" name="{{labelIcon}}" size="30" color="#d0d0d0" catchtap="chancelLabel" />
+				</view>
+				<view class="options_auth" bindtap="chooseAuth">
+					<image class="options_auth_image" src="{{optionsAuthImage}}"></image>
+					<text class="options_auth_text">谁可以看</text>
+					<text class="options_auth_type">{{selectedAuth}}</text>
+					<l-icon class="options_right" name="right" size="30" color="#d0d0d0" />
+				</view>
+			</view>
+		</scroll-view>
+	</view>
+
+
+
+
+	<view class="foot" style="bottom:{{bottom}}px">
+		<image class="foot_picture" bind:tap="pickImage" src="/images/icons/picture.png"></image>
+		<view class="foot_post" style="color: {{postColor}};" bind:tap="post">发布</view>
+	</view>
+
+	<l-arc-popup class="pop" show="{{showPop}}" min-height="600" max-height="600">
+		<view slot="header" class="pop_header">
+			<text class="pop_header_text">热门标签</text>
+		</view>
+		<view class="pop_content">
+			<block wx:for="{{labels}}" wx:key="id">
+				<label class="pop_content_label" label="{{item.label}}" data-label="{{item.label}}" bindtap="selectLabel" />
+			</block>
+		</view>
+
+	</l-arc-popup>
+
+	<l-arc-popup show="{{showPop2}}" min-height="500" max-height="500">
+		<view class="pop2_content">
+			<view class="pop2_content_item" data-auth='0' bindtap="selectAuth">
+				<text class="pop2_content_item_text1">公开</text>
+				<text class="pop2_content_item_text2">所有人可见</text>
+			</view>
+			<view class="pop2_content_item" data-auth='1' bindtap="selectAuth">
+				<text class="pop2_content_item_text1">匿名</text>
+				<text class="pop2_content_item_text2">发布动态但不展示个人信息</text>
+			</view>
+			<view class="pop2_content_item" data-auth='2' bindtap="selectAuth">
+				<text class="pop2_content_item_text1">同步到微信朋友圈</text>
+				<text class="pop2_content_item_text2">同时发布到恋爱Bar和微信朋友圈</text>
+			</view>
+		</view>
+
+	</l-arc-popup>
+
+	<l-dialog show="{{showDialog}}" type="confirm" show-title="false" confirm-text="保存草稿" cancel-text="不保存" is-hover="true" content="不保存草稿内容将被清空" locked="false" bind:linconfirm="confirmDialog" bind:lincancel="cancelDialog" />
+
+</view>
